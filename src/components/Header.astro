@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.svg";
+import Button from "./Button.astro";
+---
+
+<header class="header">
+  <section class="wrapper container">
+    <figure class="logo">
+      <Image src={logo} alt="Logo ClipBoard" />
+    </figure>
+    <div class="info">
+      <h1>A history of everything you copy</h1>
+      <p>
+        Clipboard allows you to track and organize everything you copy.
+        Instantly access your clipboard on all your devices.
+      </p>
+    </div>
+    <div class="buttons">
+      <Button label="Download for iOS" />
+      <Button label="Download for Mac" isBlue />
+    </div>
+  </section>
+</header>
+
+<style>
+  .header {
+    background-image: url(../assets/bg-header-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+
+    .wrapper {
+      
+      padding-block-start: 120px;
+      padding-block-end: 164px;
+
+      .logo {
+        width: max-content;
+        margin-inline: auto;
+        margin-block-end: 72px;
+      }
+
+      .info {
+        text-align: center;
+        margin-block-end: 48px;
+
+        > h1 {
+          font-weight: 600;
+          font-size: 2rem;
+          margin-block-end: 24px;
+          color: var(--dark-blue);
+        }
+
+        > p {
+          color: var(--grayish-blue);
+        }
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,32 @@
+---
+interface Props {
+  label: string, 
+  isBlue?: boolean,
+}
+
+const {label, isBlue} = Astro.props
+---
+<button class:list={['button', {'button--blue': isBlue}]}>
+  {label}
+</button>
+
+<style>
+  .button {
+    --bg-color: var(--cyan);
+    --sw-color: var(--cyan-ghost);
+    width: 100%;
+    padding-block: 18px;
+    border: none;
+    border-radius: 32px;
+    color: white;
+    font: inherit;
+    font-weight: 600;
+    background-color: var(--bg-color);
+    box-shadow: 0 12px 8px var(--sw-color);
+  }
+
+  .button--blue {
+    --bg-color: var(--blue);
+    --sw-color: var(--blue-ghost)
+  }
+</style>
